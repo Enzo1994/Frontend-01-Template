@@ -1,0 +1,38 @@
+<head>
+  <meta charset="UTF-8" />
+</head>
+<body>
+  <!-- I&nbsp;Like&nbsp;You&nbsp;I&nbsp;Like&nbsp;You&nbsp;I&nbsp;Like&nbsp;You&nbsp;I&nbsp;Like&nbsp;You&nbsp; -->
+  <script>
+    // var a = "你a";
+    // document.writeln(a.charCodeAt(0));
+    // document.writeln(String.fromCodePoint(0x1f4a9).codePointAt(0).toString(16));
+    // document.writeln((0xd83d).toString(10));
+    // document.writeln((0xdca9).toString(10));
+    // document.writeln((0x1f4a9).toString(10));
+
+    function utf8_encoding(str) {
+      let utf16Order = '';
+      // 1. 传入的字符转换成unicode码点
+      // 2. 确定码点在unicode中的范围
+      // 3. 转换为二进制，根据规范进行补位
+      // 4. 根据补位后的二进制的单个字节转换成16进制
+      
+
+      for (let i = 0; i < str.length; i++) {
+        var c = '0x'+str.codePointAt(i).toString(16);
+          console.log('c',c);
+        if(c >= 0xD800 && c <= 0xDFFF){
+          // 是高位代理
+          console.log(c,'高位代理')
+        }
+        // console.log(str.codePointAt(i).toString(16),str.charCodeAt(i));
+        // if(str[i])
+      }
+      // str.split("").forEach((item, index) => {
+      //   console.log(item, item.codePointAt(index));
+      // });
+    }
+    utf8_encoding("🌶");
+  </script>
+</body>
