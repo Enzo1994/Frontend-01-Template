@@ -1,25 +1,31 @@
-# Realm:
-梦境、国度
+# 浏览器工作原理：
 
-## 每个realm有一整套完整的JS内置对象
-1. 内置对象：
-![./内置对象.png]
+## 综述：
+1. 拿到URL，经过HTTP请求，
+2. 解析HTML代码，产生DOM树
+3. 进行CSS computing，生成带CSS的DOM树
+4. 进行layout，排版，确定DOM位置，生成带位置的DOM树
+5. 带位置的DOM树进行渲染，得到bitmap位图，
+6. 把bitmap显示在屏幕上
+
+## ISO-OSI七层网络模型：
+1. HTTP：<font color="yellow">require("http")</font>
+    1. 应用
+    2. 表示
+    3. 会话
+2. TCP：<font color="yellow">require("net")</font>
+    1. 传输
+3. Internet（ IP ）：
+    1. 网络层
+4. 4G / 5G / WIFI:
+    1. 数据链路层
+    2. 物理层
+
+## TCP 与 IP 的基础知识：
+1. 流、端口、require("net")
+2. 包、IP地址、libnet/libpcap
+
+## 浏览器做了什么？
 
 
-## 函数上下文栈（execution ：
-1. 进入一个函数，会push一个环境进入调用栈
-2. 函数返回，发生一次pop
-
-### 函数执行上下文栈都有什么：
-1. 代码执行位置（async函数、generate函数需要存）
-2. 如果里面有function，如果没有函数，这里就是null
-3. script or module：如果是由script或者module初始化的这里就会有
-4. generator：如果由generator产生的属性才会有，否则是null
-5. realm：一定要知道自己所在的realm
-6. lexical environment包含：
-    1. this
-    2. new.target
-    3. super
-    4. 变量 
-7. variable environment：
-    - 历史包袱，主要处理var
+## 一、URL：

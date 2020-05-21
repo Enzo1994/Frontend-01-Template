@@ -1,5 +1,8 @@
 # Realm:
 梦境、国度
+1. 在JS中，函数表达式和对象直接量均会创建对象
+2. 使用. 做隐式转换也会创建直接量
+3. 这些对象是有原型的，如果我们没有realm，就不知道他们的原型是什么
 
 ## 每个realm有一整套完整的JS内置对象
 1. 内置对象：
@@ -23,3 +26,12 @@
     4. 变量 
 7. variable environment：
     - 历史包袱，主要处理var
+
+### Environment Record：
+1. Declarative Environment Records
+    1. Function Environment Records
+    2. module Environment Records
+2. Global Environment Records
+3. Object Environment Records
+
+
